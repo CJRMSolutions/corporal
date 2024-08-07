@@ -77,7 +77,7 @@
 <body>
     <div class="login-container">
         <div class="image-container">
-            <img src="NOLogo.png" alt="CDC Web Portal">
+            <img src="NOLogo.png" alt="Call Center Portal">
         </div>
         <h2>Call Center Hub</h2>
         <form id="login-form">
@@ -111,6 +111,7 @@
             const authenticatedUser = users.find(user => user.username === username && user.password === password);
 
             if (authenticatedUser) {
+                sessionStorage.setItem('loggedIn', 'true'); // Store login status
                 window.location.href = authenticatedUser.homepage;
             } else {
                 alert('Invalid username or password');
